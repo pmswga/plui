@@ -1,0 +1,57 @@
+{
+	"scopeName": "source.lui",
+	"fileTypes": [".lui", ".py"],
+	"firstLineMatch": "^#\bLUI\b",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Lui",
+	"patterns": [
+		{ "include": "#lui" },
+		{
+			"name": "markup.bold",
+			"match": "\\d"
+		},
+		{
+			"name": "markup.heading",
+			"match": "#(LUI|FILENAME)"
+		},
+		{
+			"name": "string.quoted.double.untitled",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.untitled",
+					"match": "\\."
+				}
+			]
+		}
+	],
+	"repository": {
+		"lui": {
+			"patterns": [
+				{ "include": "#mainComponent" },
+				{ "include": "#property" },
+				{ "include": "#events" },
+				{ "include": "#component" },
+				{ "name": "constant.numeric", "match": "\\{"},
+				{ "name": "constant.numeric", "match": "\\}"}
+			]
+		},
+		"mainComponent": {
+			"name": "keyword.letter",
+			"match": "Window|Widget|Dialog"
+		},
+		"property": {
+			"name": "entity.name.class",
+			"match": "(x|y|width|height|position|title|caption|data):"
+		},
+		"events": {
+			"name": "comment.block.documentation",
+			"match": "(onclick):"
+		},
+		"component": {
+			"name": "keyword.letter",
+			"match": "Label|Button|List"
+		}
+	}
+}
