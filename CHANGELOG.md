@@ -1,9 +1,18 @@
-# Change Log
+# Evolution of Plui
 
-All notable changes to the "plui" extension will be documented in this file.
+## [0.0.3] - 2022-04-18
+### Added
+- GNU License
+- Changelog
+- Additional information about plugin in VS Code Marketplace (Repository link & bugs)
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.2] - 2022-04-18
+### Added
+- Support snippets
 
-## [Unreleased]
+### Fixed
+- Syntax highlighting
 
-- Initial release
+## [0.0.1] - 2022-04-07
+### Added
+- Support Lui grammar
