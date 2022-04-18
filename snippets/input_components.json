@@ -1,0 +1,23 @@
+{
+	"Button": {
+		"prefix": "Button",
+		"body": [
+			"Button {",
+            "\tname: $1",
+            "\tcaption: \"$2\"",
+            "\tonclick: $3",
+            "}"
+		],
+		"description": "Create Button component"
+	},
+	"Entry": {
+		"prefix": "Entry",
+		"body": [
+			"Entry {",
+            "\tname: $1",
+            "\tcaption: \"$2\"",
+            "}"
+		],
+		"description": "Create Entry component"
+	}
+}

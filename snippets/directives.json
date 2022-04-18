@@ -1,0 +1,33 @@
+{
+	"#LUI": {
+		"prefix": "#L",
+		"body": [
+			"#LUI"
+		],
+		"description": "Create directive #LUI"
+	},
+	"#FILENAME": {
+		"prefix": "#F",
+		"body": [
+			"#FILENAME '$1'"
+		],
+		"description": "Create directive #FILENAME"
+	},
+	"#HW": {
+		"prefix": "#HW",
+		"body": [
+			"#LUI",
+			"#FILENAME 'hello_world'",
+			"",
+			"Window {",
+			"\ttitle: \"My app\"",
+			"",
+			"\tLabel {",
+			"\t\tcaption: \"Hello World\"",
+			"\t}",
+			"",
+			"}"
+		],
+		"description": "Hello World"
+	}
+}

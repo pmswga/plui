@@ -64,6 +64,24 @@
 				"scopeName": "source.lui",
 				"path": "./syntaxes/lui.tmLanguage.json"
         	}
+		],
+		"snippets": [
+			{
+				"language": "lui",
+				"path": "./snippets/directives.json"
+			},
+			{
+				"language": "lui",
+				"path": "./snippets/components.json"
+			},
+			{
+				"language": "lui",
+				"path": "./snippets/output_components.json"
+			},
+			{
+				"language": "lui",
+				"path": "./snippets/input_components.json"
+			}
 		]
     },
     "scripts": {

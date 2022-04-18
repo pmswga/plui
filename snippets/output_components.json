@@ -1,0 +1,22 @@
+{
+	"Label": {
+		"prefix": "Label",
+		"body": [
+			"Label {",
+            "\tname: $1",
+            "\tcaption: \"$2\"",
+            "}"
+		],
+		"description": "Create Label component"
+	},
+	"List": {
+		"prefix": "List",
+		"body": [
+			"List {",
+            "\tname: $1",
+            "\tdata: \"$2\"",
+            "}"
+		],
+		"description": "Create List component"
+	}
+}

@@ -39,11 +39,11 @@
 		},
 		"mainComponent": {
 			"name": "keyword.letter",
-			"match": "Window|Widget|Dialog"
+			"match": "\\b(Window|Widget|Dialog)\\b"
 		},
 		"property": {
 			"name": "entity.name.class",
-			"match": "(x|y|width|height|position|title|caption|data):"
+			"match": "\\b(x|y|width|name|height|position|title|caption|data)\\b:"
 		},
 		"events": {
 			"name": "comment.block.documentation",
@@ -51,7 +51,7 @@
 		},
 		"component": {
 			"name": "keyword.letter",
-			"match": "Label|Button|List"
+			"match": "\\b(Label|Entry|Button|List)\\b"
 		}
 	}
 }

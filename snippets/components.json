@@ -1,0 +1,13 @@
+{
+	"Window": {
+		"prefix": "Window",
+		"body": [
+			"Window {",
+            "\tname: $1",
+            "\ttitle: \"$2\"",
+            "",
+            "}"
+		],
+		"description": "Create Window component"
+	}
+}
