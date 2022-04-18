@@ -1,108 +1,115 @@
 {
     "name": "plui",
-	"publisher": "lui-team",
+    "publisher": "lui-team",
     "displayName": "plui",
     "description": "Plugin for Lui",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.65.0"
     },
     "categories": [
         "Programming Languages"
     ],
-	"activationEvents": [
-		"onCommand:plui.translate",
-		"onCommand:plui.selectTranslator",
-		"onCommand:plui.selectPythonTranslator",
-		"onCommand:plui.runPythonScript"
-	],
-	"main": "./out/extension.js",
+    "activationEvents": [
+        "onCommand:plui.translate",
+        "onCommand:plui.selectTranslator",
+        "onCommand:plui.selectPythonTranslator",
+        "onCommand:plui.runPythonScript"
+    ],
+    "main": "./out/extension.js",
     "contributes": {
-		"configuration": {
-			"title": "Plui",
-			"properties": {
-				"plui.translator": {
-					"type": "string",
-					"default": "",
-					"description": "Lui translator"
-				}
-			}
-		},
+        "configuration": {
+            "title": "Plui",
+            "properties": {
+                "plui.translator": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Lui translator"
+                }
+            }
+        },
         "commands": [
-			{
-				"command": "plui.translate",
-				"category": "Plui",
-				"title": "Translate lui file"
-			},
-			{
-				"command": "plui.selectTranslator",
-				"category": "Plui",
-				"title": "Select Lui translator"
-			},
-			{
-				"command": "plui.selectPythonTranslator",
-				"category": "Plui",
-				"title": "Select Python translator"
-			},
-			{
-				"command": "plui.runPythonScript",
-				"category": "Plui",
-				"title": "Run Python script"
-			}
+            {
+                "command": "plui.translate",
+                "category": "Plui",
+                "title": "Translate lui file"
+            },
+            {
+                "command": "plui.selectTranslator",
+                "category": "Plui",
+                "title": "Select Lui translator"
+            },
+            {
+                "command": "plui.selectPythonTranslator",
+                "category": "Plui",
+                "title": "Select Python translator"
+            },
+            {
+                "command": "plui.runPythonScript",
+                "category": "Plui",
+                "title": "Run Python script"
+            }
         ],
         "languages": [
-			{
-				"id": "lui",
-				"aliases": ["Lui", "lui", "Language of ui", "Language of user interface"],
-				"extensions": [".lui"],
-				"configuration": "./language-configuration.json"
-        	}
-		],
+            {
+                "id": "lui",
+                "aliases": [
+                    "Lui",
+                    "lui",
+                    "Language of ui",
+                    "Language of user interface"
+                ],
+                "extensions": [
+                    ".lui"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
         "grammars": [
-			{
-				"language": "lui",
-				"scopeName": "source.lui",
-				"path": "./syntaxes/lui.tmLanguage.json"
-        	}
-		],
-		"snippets": [
-			{
-				"language": "lui",
-				"path": "./snippets/directives.json"
-			},
-			{
-				"language": "lui",
-				"path": "./snippets/components.json"
-			},
-			{
-				"language": "lui",
-				"path": "./snippets/output_components.json"
-			},
-			{
-				"language": "lui",
-				"path": "./snippets/input_components.json"
-			}
-		]
+            {
+                "language": "lui",
+                "scopeName": "source.lui",
+                "path": "./syntaxes/lui.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "lui",
+                "path": "./snippets/directives.json"
+            },
+            {
+                "language": "lui",
+                "path": "./snippets/components.json"
+            },
+            {
+                "language": "lui",
+                "path": "./snippets/output_components.json"
+            },
+            {
+                "language": "lui",
+                "path": "./snippets/input_components.json"
+            }
+        ]
     },
     "scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile && npm run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.65.0",
-		"@types/glob": "^7.2.0",
-		"@types/mocha": "^9.0.0",
-		"@types/node": "14.x",
-		"@typescript-eslint/eslint-plugin": "^5.9.1",
-		"@typescript-eslint/parser": "^5.9.1",
-		"eslint": "^8.6.0",
-		"glob": "^7.2.0",
-		"mocha": "^9.1.3",
-		"typescript": "^4.5.4",
-		"@vscode/test-electron": "^2.0.3"
-	}
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.65.0",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "14.x",
+        "@typescript-eslint/eslint-plugin": "^5.9.1",
+        "@typescript-eslint/parser": "^5.9.1",
+        "eslint": "^8.6.0",
+        "glob": "^7.2.0",
+        "mocha": "^9.1.3",
+        "typescript": "^4.5.4",
+        "@vscode/test-electron": "^2.0.3"
+    }
 }
