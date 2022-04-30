@@ -18,8 +18,8 @@
         "Programming Languages"
     ],
     "activationEvents": [
-        "onCommand:plui.translate",
-        "onCommand:plui.selectTranslator",
+        "onCommand:plui.selectLuiTranslator",
+        "onCommand:plui.translateLuiFile",
         "onCommand:plui.selectPythonTranslator",
         "onCommand:plui.runPythonScript"
     ],
@@ -28,23 +28,28 @@
         "configuration": {
             "title": "Plui",
             "properties": {
-                "plui.translator": {
+                "plui.luiTranslator": {
                     "type": "string",
-                    "default": "",
+                    "default": "none",
                     "description": "Lui translator"
+                },
+                "plui.pythonTranslator": {
+                    "type": "string",
+                    "default": "none",
+                    "description": "Python trnaslator"
                 }
             }
         },
         "commands": [
             {
-                "command": "plui.translate",
-                "category": "Plui",
-                "title": "Translate lui file"
-            },
-            {
-                "command": "plui.selectTranslator",
+                "command": "plui.selectLuiTranslator",
                 "category": "Plui",
                 "title": "Select Lui translator"
+            },
+            {
+                "command": "plui.translateLuiFile",
+                "category": "Plui",
+                "title": "Translate lui file"
             },
             {
                 "command": "plui.selectPythonTranslator",
@@ -95,6 +100,20 @@
             {
                 "language": "lui",
                 "path": "./snippets/input_components.json"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "plui.selectLuiTranslator",
+                "key": "shift+s"
+            },
+            {
+                "command": "plui.translateLuiFile",
+                "key": "shift+t"
+            },
+            {
+                "command": "plui.runPythonScript",
+                "key": "shift+r"
             }
         ]
     },
