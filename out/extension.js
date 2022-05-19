@@ -25,7 +25,6 @@ function activate(context) {
                 let luiTranslator = vscode.workspace.getConfiguration('plui').get("luiTranslator");
                 let currentFile = vscode.window.activeTextEditor?.document.fileName;
                 if (luiTranslator !== undefined && currentFile !== undefined) {
-                    //let shellCommand = luiTranslator + " --file=" + currentFile;
                     let task = new vscode.Task({ type: 'lui', task: 'translate' }, activeWsf, 'lui translating', 'lui', new vscode.ShellExecution({
                         quoting: vscode.ShellQuoting.Strong,
                         value: luiTranslator
@@ -49,7 +48,7 @@ function activate(context) {
             }
         }
     });
-    let selectPythonTranslator = vscode.commands.registerCommand('plui.selectPythonTranslator', () => {
+    let selectPythonInterpreter = vscode.commands.registerCommand('plui.selectPythonInterpreter', () => {
         vscode.window.showOpenDialog({
             "filters": {
                 'Executable': ['exe']
@@ -58,7 +57,7 @@ function activate(context) {
             .then(answer => {
             if (answer !== undefined) {
                 vscode.window.showInformationMessage("Translator was be selected");
-                vscode.workspace.getConfiguration('plui').update('pythonTranslator', answer[0].fsPath);
+                vscode.workspace.getConfiguration('plui').update('pythonInterpreter', answer[0].fsPath);
             }
         });
     });
@@ -66,8 +65,8 @@ function activate(context) {
         let wsf = vscode.workspace.workspaceFolders;
         if (wsf !== undefined) {
             let activeWsf = wsf[0];
-            if (vscode.workspace.getConfiguration('plui').has('pythonTranslator')) {
-                let pythonTranslator = vscode.workspace.getConfiguration('plui').get("pythonTranslator");
+            if (vscode.workspace.getConfiguration('plui').has('pythonInterpreter')) {
+                let pythonTranslator = vscode.workspace.getConfiguration('plui').get("pythonInterpreter");
                 let currentFile = vscode.window.activeTextEditor?.document.fileName;
                 if (pythonTranslator !== undefined && currentFile !== undefined) {
                     let task = new vscode.Task({ type: 'python', task: 'run' }, activeWsf, 'run script', 'python', new vscode.ShellExecution({
@@ -82,20 +81,20 @@ function activate(context) {
                     vscode.tasks.executeTask(task);
                 }
                 else if (pythonTranslator === undefined) {
-                    vscode.window.showErrorMessage('Python translator not selected');
+                    vscode.window.showErrorMessage('Python interpreter not selected');
                 }
                 else {
                     vscode.window.showErrorMessage('Current file not opened');
                 }
             }
             else {
-                vscode.window.showErrorMessage('Python translator not selected');
+                vscode.window.showErrorMessage('Python interpreter not selected');
             }
         }
     });
     context.subscriptions.push(selectLuiTranslator);
     context.subscriptions.push(translateLuiFile);
-    context.subscriptions.push(selectPythonTranslator);
+    context.subscriptions.push(selectPythonInterpreter);
     context.subscriptions.push(runPythonScript);
 }
 exports.activate = activate;

@@ -33,7 +33,7 @@
                     "default": "none",
                     "description": "Lui translator"
                 },
-                "plui.pythonTranslator": {
+                "plui.pythonInterpreter": {
                     "type": "string",
                     "default": "none",
                     "description": "Python trnaslator"
@@ -52,7 +52,7 @@
                 "title": "Translate lui file"
             },
             {
-                "command": "plui.selectPythonTranslator",
+                "command": "plui.selectPythonInterpreter",
                 "category": "Plui",
                 "title": "Select Python translator"
             },

@@ -7,9 +7,13 @@ const vscode = require("vscode");
 // import * as myExtension from '../../extension';
 suite('Extension Test Suite', () => {
     vscode.window.showInformationMessage('Start all tests.');
-    test('Sample test', () => {
-        assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-        assert.strictEqual(-1, [1, 2, 3].indexOf(0));
+    test('Get Lui translator', () => {
+        let luiTranslator = vscode.workspace.getConfiguration('plui').get("luiTranslator");
+        assert.strictEqual('none', luiTranslator);
+    });
+    test('Get Python interpreter', () => {
+        let pythonInterpreter = vscode.workspace.getConfiguration('plui').get("pythonInterpreter");
+        assert.strictEqual('none', pythonInterpreter);
     });
 });
 //# sourceMappingURL=extension.test.js.map
